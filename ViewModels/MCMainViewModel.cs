@@ -1,11 +1,5 @@
 ﻿using Caliburn.Micro;
 using MCDemo.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
 
 namespace MCDemo.ViewModels
 {
@@ -13,6 +7,18 @@ namespace MCDemo.ViewModels
     {
         private MCFillingModel _filling;
         private double _fillingResult;
+        private double _fillingThinkness;
+
+        public double FillingThinkness
+        {
+            get { return _fillingThinkness; }
+            set 
+            { 
+                _fillingThinkness = value;
+                NotifyOfPropertyChange(() => FillingThinkness);
+
+            }
+        }
 
         public double FillingResult
         {
@@ -26,13 +32,14 @@ namespace MCDemo.ViewModels
 
         public MCMainViewModel()
         {
-            _filling = new MCFillingModel(1000, 500, 1.45, 0.45, 34);
-            _fillingResult = 2000;
+            _filling = new MCFillingModel();
+            _fillingResult = 0;
+            _fillingThinkness = 0;
         }
         public void FillingCalculate()
         {
             // _fillingResult = _filling.MassCalculate();
-            FillingResult = _filling.MassCalculate();
+            FillingResult = _filling.MassCalculate(1000, 500, 1.45, _fillingThinkness, 34);
             //MessageBox.Show(_fillingResult.ToString());
         }
     }
