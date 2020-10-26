@@ -1,0 +1,14 @@
+﻿<Window x:Class="MCDemo.Views.MCMainView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MCDemo.Views"
+        mc:Ignorable="d"
+        Title="MCMainView" Height="450" Width="800">
+    <Grid>
+
+        <Button Name="FillingCalculate" Content="计算" HorizontalAlignment="Left" Margin="260,280,0,0" VerticalAlignment="Top" Width="75"/>
+        <TextBlock Name="FillingResult" HorizontalAlignment="Left" Margin="260,200,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
+    </Grid>
+</Window>

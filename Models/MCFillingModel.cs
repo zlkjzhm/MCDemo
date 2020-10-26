@@ -29,10 +29,10 @@ namespace MCDemo.Models
 
         }
 
-        double MassCalculate()
+        public double MassCalculate()
         {
-
-            return 0;
+            double res = (_length / 1000) * (_width / 1000) * (_thickness / 1000) * (_density * 1000) * 59;
+            return res;
         }
     }
 }
