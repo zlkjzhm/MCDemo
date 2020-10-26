@@ -6,6 +6,7 @@ namespace MCDemo.ViewModels
     class MCMainViewModel : PropertyChangedBase
     {
         private MCFillingModel _filling;
+        private MCWaterCollectorModel _waterCollector;
         private double _fillingResult;
         private double _fillingThinkness;
 
@@ -33,13 +34,15 @@ namespace MCDemo.ViewModels
         public MCMainViewModel()
         {
             _filling = new MCFillingModel();
+            _waterCollector = new MCWaterCollectorModel(0.6, 1.45, BPType.T60);
             _fillingResult = 0;
             _fillingThinkness = 0;
         }
         public void FillingCalculate()
         {
-            // _fillingResult = _filling.MassCalculate();
-            FillingResult = _filling.MassCalculate(1000, 500, 1.45, _fillingThinkness, 34);
+            //FillingResult = _filling.WeightCalculate(1000, 500, 1.45, _fillingThinkness, 34);
+            FillingResult = _waterCollector.WeightCalculate();
+
             //MessageBox.Show(_fillingResult.ToString());
         }
     }

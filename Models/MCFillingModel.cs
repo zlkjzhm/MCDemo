@@ -21,7 +21,7 @@ namespace MCDemo.Models
 
         }
 
-        public double MassCalculate(double length, double width, double density, double thickness, double waveDistance)
+        public double WeightCalculate(double length, double width, double density, double thickness, double waveDistance)
         {
             //保存数据
             _length = length;
