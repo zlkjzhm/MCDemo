@@ -34,7 +34,7 @@ namespace MCDemo.ViewModels
         public MCMainViewModel()
         {
             _filling = new MCFillingModel();
-            _waterCollector = new MCWaterCollectorModel(0.6, 1.45, BPType.T60);
+            _waterCollector = new MCWaterCollectorModel(BPType.T60, 0.6);
             _fillingResult = 0;
             _fillingThinkness = 0;
         }

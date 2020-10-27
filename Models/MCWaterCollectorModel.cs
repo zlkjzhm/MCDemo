@@ -62,11 +62,10 @@ namespace MCDemo.Models
             _type = type;
         }
         public double GetWeight(int num, double weight = 19)
-        {
+        {           
+            double ret = weight / 1000.0 * num;
             _num = num;
-            _weight = weight;
-            double ret = weight / 1000 * num;
-
+            _weight = ret;
             return ret;
         }
     }
@@ -75,21 +74,21 @@ namespace MCDemo.Models
     {
         private int _num;
         private double _weight;
-
         public int Num
         {
             get { return _num; }
             private set {}
         }
 
-        public Threading(int num = 6, double weight = 0.09)
+        public Threading(int num = 6)
         {
             _num = num;
-            _weight = weight;
         }
-        public double GetWeight()
+        public double GetWeight(double weight = 0.09)
         {
-            double ret = _weight * _num;
+            double ret = weight * _num;
+
+            _weight = ret;
             return ret;
         }
     }
@@ -98,14 +97,16 @@ namespace MCDemo.Models
     {
         private int _num;
         private double _weight;
-        public Nut(int num = 12, double weight = 0.001)
+        public Nut()
         {
-            _num = num;
-            _weight = weight;
+            
         }
-        public double GetWeight()
+        public double GetWeight(int num = 12, double weight = 0.001)
         {
-            double ret = _weight * _num;
+            
+            double ret = weight * num;
+            _num = num;
+            _weight = ret;
             return ret;
         }
     }
@@ -116,7 +117,7 @@ namespace MCDemo.Models
         private BendingPlate _bendingPlate;
         private Threading _tHreading;
         private Nut _nut;
-        public MCWaterCollectorModel(double wpThinkness, double wpDensity, BPType bPType)
+        public MCWaterCollectorModel(BPType bPType, double wpThinkness, double wpDensity = 1.45)
         {
             _wavePlate = new WavePlate(wpThinkness, wpDensity);
             _bendingPlate = new BendingPlate(bPType);
