@@ -8,9 +8,24 @@
         Title="MCMainView" Height="450" Width="800">
     <Grid>
 
-        <Button Name="FillingCalculate" Content="计算" HorizontalAlignment="Left" Margin="260,280,0,0" VerticalAlignment="Top" Width="75"/>
-        <TextBlock Name="FillingResult" HorizontalAlignment="Left" Margin="260,200,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
-        <TextBox Name ="FillingThinkness" HorizontalAlignment="Left" Height="23" Margin="115,216,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        
+        <!--<TabControl Name="TabControl1">
+            <TabItem Header="填料">
+                --><!--<ContentControl Grid.Row="0" Name="ActiveItem"/>--><!--
 
+            </TabItem>
+            <TabItem Header="收水器">
+                <ContentControl Grid.Row="0" Name="ActiveItem"/>
+            </TabItem>
+            <TabItem Header="钢管">
+                <ContentControl Grid.Row="0" Name="ActiveItem3"/>
+            </TabItem>
+        </TabControl>-->
+        <Button Name="FillingButton" Margin="10,10,702,375" Content="填料"/>
+
+        <Button Name="WaterCollectorButton" Margin="10,75,702,310" Content="收水器" RenderTransformOrigin="0.5,2.857"/>
+        
+        <Button Margin="10,135,702,250" Content="钢管" RenderTransformOrigin="0.375,2.857" />
+        <ContentControl Grid.Row="0" Name="ActiveItem" Margin="90,0,0,0"/>
     </Grid>
 </Window>

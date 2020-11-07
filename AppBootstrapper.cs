@@ -17,6 +17,8 @@ namespace MCDemo
 
         protected override void OnStartup(object sender, StartupEventArgs e)
         {
+            //DisplayRootViewFor<MCFillingViewModel>();
+
             DisplayRootViewFor<MCMainViewModel>();
         }
     }

@@ -73,6 +73,10 @@
     <Compile Include="Models\MCWaterCollectorModel.cs" />
     <Compile Include="ViewModels\MCMainViewModel.cs" />
     <Compile Include="ViewModels\MCFillingViewModel.cs" />
+    <Compile Include="ViewModels\MCWaterCollectorViewModel.cs" />
+    <Compile Include="Views\MCFillingView.xaml.cs">
+      <DependentUpon>MCFillingView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\MCMainView.xaml.cs">
       <DependentUpon>MCMainView.xaml</DependentUpon>
     </Compile>
@@ -80,7 +84,18 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Views\MCWaterCollectorView.xaml.cs">
+      <DependentUpon>MCWaterCollectorView.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Views\MCFillingView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\MCMainView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MCWaterCollectorView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
